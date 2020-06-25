@@ -9,3 +9,6 @@ Figure 1. Player home page.
 ![alt text](https://github.com/neilr23/NBA-Head2Head/blob/master/figures/match_example.PNG?raw=true)
 
 Figure 2. Example of a match against the CPU.
+
+
+Note: Extract the files from info.zip and make sure there is a folder called "info" containing these files
