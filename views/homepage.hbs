@@ -1,0 +1,66 @@
+<html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+
+<body>
+  
+  {{#if notLoggedIn}}
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center white-text">NBA Head2Head</h1>
+      <div class="row center">
+        <a href="{{loginUrl}}" id="download-button" class="btn-large waves-effect waves-blue">Login</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+  {{else}}
+  <nav class="transparent" role="navigation">
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Total Cash: {{cash}}</a></li>
+      </ul>
+      <ul class="left hide-on-med-and-down">
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center white-text">NBA Head2Head</h1>
+      <div class="row center">
+        <h5 class="header col s12 light"></h5>
+      </div>
+      <div class="row center">
+          <div class="row center">
+        <a href="/game_sim_worker" id="download-button" class="btn-large waves-effect waves-light red">Play Match</a>
+      </div>
+      <br>
+      <div class="row center">
+        <a href="/roster" id="download-button" class="btn-large waves-effect waves-blue">View Roster</a>
+      </div>
+      <div class="row center">
+        <a href="/pack" id="download-button" class="btn-large waves-effect waves-blue">Buy Pack ($500)</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  {{/if}}
+
+  </body>
+  </html>

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+<body>
+    <h4 class="header center orange-text">{{final_score}}</h4>
+    <h4 class="header center red-text">{{winner}}</h4>
+    <table>
+        <thead>
+          <tr>
+              <th>{{t1name}} Box Score</th>
+          </tr>
+        </thead>
+
+        <tbody>
+              {{#each team1_stats}}
+                <td>
+                    {{this}}
+                </td>
+              {{/each}}
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+              <th>{{t2name}} Box Score</th>
+          </tr>
+        </thead>
+
+        <tbody>
+              {{#each team2_stats}}
+                <td>
+                    {{this}}
+                </td>
+              {{/each}}
+        </tbody>
+      </table>
+    <a href="/game_sim_worker" id="download-button" class="btn-large waves-effect waves-light red">Play Again</a>
+    <a href="/" id="download-button" class="btn-large waves-effect waves-blue">Home</a>
+
+  </body>
+  </html>

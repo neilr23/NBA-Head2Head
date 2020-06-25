@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+  <body>
+            <h4 class="header center white-text">Choose a single player to add on to your team.</h4>
+            <div class="row">
+                {{#each display}}
+                <div class="col s2 push-s1">
+                  <div class="card">
+                    <div class="card-image">
+                      <a class="player" onclick="select('{{this.name}}')"><img src={{this.url}}></a>
+                  </div>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+                <a href="/" id="download-button" class="btn-large waves-effect waves-blue">Home</a>
+<script type="text/javascript">
+        function replace(player) {
+            var values = {
+                    'column'       : player,
+            };
+            $.ajax({
+                url: "https://nbah2h.sites.tjhsst.edu/edit_team_worker",
+                type: "GET",
+                data: values,
+                success: function(data){
+                    document.body.innerHTML = data;
+                }
+            });
+        }    
+    </script>
+  <script type="text/javascript">
+        function select(player) {
+        var values = {
+                'name'       : player,
+        };
+        $.ajax({
+            url: "https://nbah2h.sites.tjhsst.edu/team_switch",
+            type: "GET",
+            data: values,
+            success: function(data){
+                document.body.innerHTML = data;
+            }
+        });
+        }    
+    </script>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ 
+
+  </body>
+</html>
+
+

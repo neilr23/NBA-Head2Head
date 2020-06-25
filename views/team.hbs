@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+  <body>
+            <h4 class="header center white-text">{{name}}'s Roster</h4>
+            <div class="row">
+                {{#each display}}
+                <div class="col s2 push-s1">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src={{this}}></img>
+                  </div>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+        <a href="/" id="download-button" class="btn-large waves-effect waves-blue">Home</a>
+
+  </body>
+</html>
+
+
